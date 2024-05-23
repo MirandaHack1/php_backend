@@ -27,10 +27,23 @@
         $vnames = $_POST["fname"];
         $vages = $_POST["fage"];
 
-        echo "La informacion ingresada es la siguiente:" . $vnames . "," . $vages . ".";
+        echo "La informacion ingresada es la siguiente:" . $vnames . "," . $vages . "." ."<br>";
+
+        $inforamcion = [
+            "Jhonny" => 20,
+            "Juan" => 30,
+            "Pedro" => 40,
+            "Matha" => 60
+        ];
+        var_dump($inforamcion);
+        print_r($inforamcion);
     } else {
         echo "Error, envio de datos";
     }
+
+
+
+
     ?>
 
 </body>
