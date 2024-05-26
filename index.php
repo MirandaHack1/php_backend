@@ -293,5 +293,107 @@ foreach ($tienda_cafes as $cafes =>  $precios) {
     if ($cafes == "Americano") {
         continue; //salta la iteracion
     }
-    echo "<br>El cafe es muy rico: ".$cafes;
+    echo "<br>El cafe es muy rico: " . $cafes;
 };
+
+
+//FUNCIONES PHP
+echo "<br>";
+get_pokemon();
+function get_pokemon()
+{
+    $numero_aleartorio = rand(1, 3);
+    switch ($numero_aleartorio) {
+        case 1:
+            echo "Pikachu";
+            break;
+        case 2:
+            echo "Charmander";
+            break;
+        case 3:
+            echo "Bulbasaur";
+            break;
+        default:
+            echo "No existe ese pokemon";
+    };
+}
+
+//FUNCIONES PARAMETROS
+echo "<br>";
+estudiante_legend(20000);
+function estudiante_legend($platzi_rank)
+{
+    if ($platzi_rank >= 20000) {
+        echo "El estudiante es legendario <br>";
+    } else {
+        echo "El estudiante no es legendario <br>";
+    };
+};
+//valores por defecto
+function suma($numero1 = 0, $numero2 = 0)
+{
+    echo "La suma de $numero1 + $numero2" . $numero1 + $numero2 . "<br>";
+}
+suma(5, 6);
+suma(1);
+
+//array UNIR DOs ARREGLOS con arrelgos upaqing
+$arreglo1 = [1, 2, 3, 4, 5];
+$arreglo2 = [6, 7, 8, 9, 10];
+$resultado = [...$arreglo1, ...$arreglo2];
+echo "<br>";
+var_dump($resultado);
+
+// FUNCIONES CON ARREGLOS
+function suma_numeros($a = 0, $b = 0)
+{
+    echo "La suma de $a + $b es " . ($a + $b) . "<br>";
+}
+
+$numeros_aleartorios = [1, 2];
+suma_numeros(...$numeros_aleartorios);  // Llamamos la función desempaquetando el array correctamente
+
+// SUMA INFINITA
+function suma_infinita(...$params)
+{
+    $suma = 0;
+    // var_dump($params);
+    foreach ($params as $numero) {
+        $suma += $numero;
+    }
+    echo "La suma es: $suma <br>";
+}
+suma_infinita(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+suma_infinita(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+suma_infinita(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29);
+
+
+// FUNCIONES CON RETURN
+function hablar_fredy()
+{
+    $frases_aleartorio = rand(1, 4);
+    $frase_enviar = "";
+    switch ($frases_aleartorio) {
+        case 1:
+            $frase_enviar = "Hola, que tal?";
+            break;
+        case 2:
+            $frase_enviar = "La empresa no es familia";
+            break;
+        case 3:
+            $frase_enviar = "Ano php";
+            break;
+    }
+    return $frase_enviar;
+}
+echo hablar_fredy();
+
+//operador nave espacial  con funcion anonima ordenar array
+$precios_cafes =[12,56,32,1];
+usort($precios_cafes, function($a,$b){
+    return $a <=> $b;
+});
+var_dump($precios_cafes);
+
+
+
