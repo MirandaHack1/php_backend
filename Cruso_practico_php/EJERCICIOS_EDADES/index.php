@@ -14,6 +14,18 @@
         <input type="number" name="fedad" id="fedad" class="input-field">
         <button type="submit" class="submit-button">Enviar</button>
     </form>
+    <!-- arbolito de navidad con * -->
+    <?php
+    // $numero_asteristicos = 5;
+    graficar_arbolito(5);
+    function graficar_arbolito($numero_asteristicos)
+    {
+        for ($i = 1; $i <= $numero_asteristicos; $i++) {
+            echo str_repeat('*', $i) . "<br>";
+        }
+    }
+
+    ?>
 </body>
 
 </html>
